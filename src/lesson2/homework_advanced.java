@@ -8,6 +8,7 @@ public class homework_advanced {
         String chislo = "234";
         String text = "some_text";
         System.out.println( (Integer.parseInt(chislo) + text.length()) );
+//      System.out.println( (Integer.valueOf(chislo) + text.length()) );
         //Задача №2
         //Посчитать (a+b)^2 = ?, при a=3, b=5
 
