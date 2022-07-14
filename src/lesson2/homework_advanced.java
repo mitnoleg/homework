@@ -5,7 +5,9 @@ public class homework_advanced {
         //Продвинутый уровень
         //Задача №1
         //Произвести преобразование текста "234" в число типа int и прибавить к этому числу длину строки "some_text"
-
+        String chislo = "234";
+        String text = "some_text";
+        System.out.println( (Integer.parseInt(chislo) + text.length()) );
         //Задача №2
         //Посчитать (a+b)^2 = ?, при a=3, b=5
 
