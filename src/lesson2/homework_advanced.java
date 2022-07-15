@@ -31,14 +31,16 @@ public class homework_advanced {
         int[] allNumbers = new int[numbers.length + numbers2.length];
         System.arraycopy(numbers, 0, allNumbers, 0, numbers.length);
         System.arraycopy(numbers2, 0, allNumbers, numbers.length, numbers2.length);
-        System.out.println(Arrays.toString(allNumbers));
+        System.out.print(Arrays.toString(allNumbers).substring(1, Arrays.toString(allNumbers).length()-1)+", ");
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print( "(" + numbers[i] + "*" + numbers2[i] + ")" + "=" + numbers[i] * numbers2[i]  );
+//            System.out.print( "(" + numbers[i] + "*" + numbers2[i] + ")" + "=" + numbers[i] * numbers2[i]  );
+            System.out.print(  numbers[i] * numbers2[i]  );
             if (i < numbers.length - 1) {
                 System.out.print( ", "  );
             }
         }
         //Задача №4
         //В слове "Hello world!" заменить l на r, сделать все буквы заглавными, выбрать первые 8 символов, вывести на экран
+
     }
 }
