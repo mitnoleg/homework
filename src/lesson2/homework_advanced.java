@@ -1,5 +1,7 @@
 package lesson2;
 import java.util.Arrays;
+import java.util.Locale;
+
 public class homework_advanced {
     public static void main(String[] args) {
         //Продвинутый уровень
@@ -38,9 +40,15 @@ public class homework_advanced {
             if (i < numbers.length - 1) {
                 System.out.print( ", "  );
             }
+            else {
+                System.out.print("\n");
+            }
         }
         //Задача №4
         //В слове "Hello world!" заменить l на r, сделать все буквы заглавными, выбрать первые 8 символов, вывести на экран
-
+        String hw = "Hello world!";
+//        System.out.println(hw.replace('l','r'));
+//        System.out.println(hw.replace('l','r').toUpperCase());
+        System.out.println(hw.replace('l','r').toUpperCase().substring(0,8));
     }
 }
