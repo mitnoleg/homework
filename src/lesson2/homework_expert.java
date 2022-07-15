@@ -20,15 +20,19 @@ public class homework_expert {
 
         //Используемые технологии: String.find, String.replaceAll, String.split, String.join, String.contains, String.substring
         //Регулярные выражения, класс StringBuilder
-        String textVhod1 = "<client>(Какие то данные)<data>79991113344;test@yandex.ru;Иванов Иван Иванович</data></client>";
-        String textVhod2 = "<client>(Какие то данные)<data></data></client>";
-        String textVhod3 = "<client>(Какие то данные)<data>Иванов Иван Иванович;79991113344</data></client>";
+//        String textVhod1 = "<client>(Какие то данные)<data>79991113344;test@yandex.ru;Иванов Иван Иванович</data></client>";
+//        String textVhod1 = "<client>(Какие то данные)<data></data></client>";
+        String textVhod1 = "<client>(Какие то данные)<data>Иванов Иван Иванович;79991113344</data></client>";
         int index1 = textVhod1.indexOf("<data>");
         int index2 = textVhod1.indexOf("</client>");
         System.out.println(textVhod1.substring(0,index1));
         System.out.println(textVhod1.substring(index1,index2));
         String dataStr = textVhod1.substring(index1,index2);
-        System.out.println(dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<")));
-        System.out.println(textVhod1.substring(index2,textVhod1.length()));
+//        System.out.println(dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<")));
+        if (dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<")).length() !=0) {
+//            System.out.println(dataStr.substring(dataStr.indexOf(">") + 1, dataStr.indexOf(";")));
+
+        }
+        System.out.println(textVhod1.substring(index2, textVhod1.length()));
     }
 }
