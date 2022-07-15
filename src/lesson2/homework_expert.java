@@ -27,6 +27,8 @@ public class homework_expert {
         int index2 = textVhod1.lastIndexOf("</client>");
         System.out.println(textVhod1.substring(0,index1));
         System.out.println(textVhod1.substring(index1,index2));
+        String dataStr = textVhod1.substring(index1,index2);
+        System.out.println(textVhod1.substring(index1,index2).substring(1,dataStr.lastIndexOf("<")));
         System.out.println(textVhod1.substring(index2,textVhod1.length()));
     }
 }
