@@ -20,19 +20,40 @@ public class homework_expert {
 
         //Используемые технологии: String.find, String.replaceAll, String.split, String.join, String.contains, String.substring
         //Регулярные выражения, класс StringBuilder
-//        String textVhod1 = "<client>(Какие то данные)<data>79991113344;test@yandex.ru;Иванов Иван Иванович</data></client>";
+//       String textVhod1 = "<client>(Какие то данные)<data>79991113344;test33333@yandex.ru;Иванов Иван Иванович</data></client>";
 //        String textVhod1 = "<client>(Какие то данные)<data></data></client>";
-        String textVhod1 = "<client>(Какие то данные)<data>Иванов Иван Иванович;79991113344</data></client>";
+//        String textVhod1 = "<client>(Какие то данные)<data>Иванов Иван Иванович;79991113344</data></client>";
+        String textVhod1 = "<client>(Какие то данные)<data>Иванов Иван Иванович</data></client>";
         int index1 = textVhod1.indexOf("<data>");
         int index2 = textVhod1.indexOf("</client>");
-        System.out.println(textVhod1.substring(0,index1));
-        System.out.println(textVhod1.substring(index1,index2));
-        String dataStr = textVhod1.substring(index1,index2);
-//        System.out.println(dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<")));
-        if (dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<")).length() !=0) {
-//            System.out.println(dataStr.substring(dataStr.indexOf(">") + 1, dataStr.indexOf(";")));
+//        System.out.print(textVhod1.substring(0,index1) + "<data>");
+        String full = textVhod1.substring(0,index1) + "<data>";
 
+//        System.out.println(textVhod1.substring(index1,index2));
+        String dataStr = textVhod1.substring(index1,index2);
+        dataStr = dataStr.substring(dataStr.indexOf(">")+1,dataStr.lastIndexOf("<"));
+//        System.out.println(dataStr.length());
+        if (dataStr.length() > 0) {
+            String[] podStr = dataStr.split(";");
+            for (String str : podStr) {
+//            System.out.println(str);
+                if (str.contains("@") && str.contains(".")) {
+                    StringBuilder sb = new StringBuilder(str);
+                    full = full + sb.replace(3, str.indexOf('@'), "*".repeat((str.indexOf('@') - 3))).replace(str.indexOf('@') + 1, str.lastIndexOf('.'), "*".repeat(str.lastIndexOf('.') - (str.indexOf('@') + 1))) + ";";
+//                System.out.println(sb.replace(str.indexOf('@')+1, str.lastIndexOf('.'), "*".repeat(str.lastIndexOf('.')-(str.indexOf('@')+1))));
+                } else if (str.contains(" ")) {
+                    StringBuilder sb = new StringBuilder(str);
+//                System.out.println(str);
+                    full = full + sb.replace(1, str.indexOf(' ') - 1, "*".repeat(str.indexOf(' ') - 2)).replace(str.lastIndexOf(' ') + 2, str.length(), ".")+ ";";
+                } else {
+                    StringBuilder sb = new StringBuilder(str);
+//                System.out.println(str);
+                    full = full + sb.replace(4, str.length() - 4, "*".repeat(str.length() - 4 - 4))+ ";";
+                }
+            }
+            full = full.substring(0,full.length()-1);
         }
-        System.out.println(textVhod1.substring(index2, textVhod1.length()));
+        full = full + "</data>" + textVhod1.substring(index2, textVhod1.length());
+        System.out.print(full);
     }
 }
