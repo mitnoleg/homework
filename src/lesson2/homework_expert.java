@@ -53,7 +53,7 @@ public class homework_expert {
             }
             full = full.substring(0,full.length()-1);
         }
-        full = full + "</data>" + textVhod1.substring(index2, textVhod1.length());
+        full = full + "</data>" + textVhod1.substring(index2,textVhod1.length());
         System.out.print(full);
     }
 }
