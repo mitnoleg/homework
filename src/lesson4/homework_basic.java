@@ -10,12 +10,31 @@ public class homework_basic {
         //
         // Задание №2
         // Дано:
-        int ageChildren = 10;
+        // int ageChildren = 10;
         // Задача: Написать условную конструкцию, которая в зависимости от возраста ребенка, отправляет его в учебное заведение
         // если ребенку до 6 лет то в сад, если до 11 лет в младшую школу, если до 17 лет в среднюю школу, иначе в университет
         // Отправляет - имеется в виду, печатает на экран: "пошел с сад", "пошел в младшую школу" и т.д.
         // Проверьте работоспособность условий, через изменение значения переменной.
         //
+        for (int ageChildren = 0; ageChildren < 27; ageChildren += 2 ){
+            if (ageChildren < 6 ){
+                System.out.println("Возраст ребенка " + ageChildren + " года и он пошел в сад");
+            }
+            else if (ageChildren < 11 ){
+                System.out.println("Возраст ребенка " + ageChildren + " лет и он пошел в младшую школу");
+            }
+            else if (ageChildren < 17 ){
+                System.out.println("Возраст ребенка " + ageChildren + " лет и он пошел в среднюю школу");
+            }
+            else {
+                if (ageChildren == 22 || ageChildren == 24){
+                System.out.println("Возраст ребенка " + ageChildren + " года и он пошел в университет");
+                }
+                else {
+                    System.out.println("Возраст ребенка " + ageChildren + " лет и он пошел в университет");
+                }
+            }
+        }
         // Задание №3
         // Дано:
         boolean chicken = true;
