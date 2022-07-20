@@ -62,11 +62,28 @@ public class homework_basic {
         }else {
             System.out.println("\nПовар у тебя нет ингридиентов для салатов по приоритету");
         }
-
+        System.out.println("");
         // Задание №4
         // Создать два класса, которые описывают какое либо животное (имеют два атрибута).
         // Написать к ним конструктор, сеттеры, геттеры.
         // Создать экземпляры этих двух животных.
-
+        Mouse gleb = new Mouse("Глебяо","Зеленого");
+        Mouse vzhig = new Mouse("Вжиг","Красного");
+        System.out.println(gleb.getColor());
+        System.out.println(gleb.getData());
+        System.out.println(vzhig.getData());
+        gleb.setName("Миони");
+        vzhig.setColor("Синего");
+        System.out.println(gleb.getData());
+        System.out.println(vzhig.getData());
+        Dolphin zip = new Dolphin("Зипяо",5);
+        Dolphin zep = new Dolphin("Зубик",10);
+        System.out.println(zip.getAge());
+        System.out.println(zip.getData());
+        System.out.println(zep.getData());
+        zip.setName("Звезда");
+        zep.setAge(19);
+        System.out.println(zip.getData());
+        System.out.println(zep.getData());
     }
 }
