@@ -1,5 +1,5 @@
 package lesson4;
-
+import java.util.Arrays;
 public class homework_advanced {
     public static void main(String[] args) {
         // Продвинутый уровень
@@ -25,6 +25,18 @@ public class homework_advanced {
         // Например, дано: [1,1,1,1,1]
         // Ожидаемый результат: [0,1,0,1,0]
         // Подсказка: прочитай про операнд "%".
+        int dlinaMassiva = 50;
+        int [] array = new int[dlinaMassiva];
+        for (int i = 0; i < array.length; i++){
+            array[i]=1;
+        }
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; i++){
+            if (i % 2 == 0){
+                array[i]=0;
+            }
+        }
+        System.out.println(Arrays.toString(array));
 
         // Задание №3:
         // Дано:
