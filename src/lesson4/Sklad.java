@@ -8,7 +8,7 @@ public class Sklad {
 
 
     public Sklad (int tovarKol) {
-        this.name = "vodka";
+        this.name = "водка";
         this.count = tovarKol;
     }
 
