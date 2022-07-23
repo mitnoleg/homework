@@ -1,8 +1,7 @@
 package lesson4;
 
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class homework_expert {
     public static void main(String[] args) {
@@ -35,9 +34,23 @@ public class homework_expert {
         // <Integer> - обозначает тип который хранится в этой структуре данных (Generics)
         // Регулярные выражения - вытащить регион авто
         Map<Integer, Map<String, String[]>> data = GeneratorExpertHomework.getData();
-        System.out.println(data.size());
+        System.out.println("Всего регионов: " + data.size());
         Set<Integer> regions = data.keySet();
         System.out.println("Регионы: " + regions);
+        List sortedKeys=new ArrayList(data.keySet());
+        Collections.sort(sortedKeys);
+        System.out.println("Регионы: " + sortedKeys);
+
+//        System.out.println(data.get(256).entrySet());
+//        Set<Map.Entry<String, String[]>> arr = data.get(256).entrySet().;
+//        Set set = data.entrySet();
+//        Iterator i = set.iterator();
+//        while(i.hasNext()) {
+//            Map.Entry me = (Map.Entry)i.next();
+//            System.out.print(me.getKey() + ": ");
+//            System.out.println(me.getValue());
+//        }
+
     }
 
     }
