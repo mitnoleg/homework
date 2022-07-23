@@ -78,15 +78,15 @@ public class homework_advanced {
         if (kolvoProblem > 0 ){
 
             if (hasTransmissionProblem && ( hasElectricsProblem || hasMotorProblem) ){
-//                schet  = schet - schet/100*20;
-//                schet -= schet / 100 * 20;
+//              schet -= schet / 100 * 20
+//              schet  = schet - schet / 100 * 20
                 schet *= 0.8;
                 System.out.println("Скидка 20%");
                 // Если сломана коробка передач, и электрика или двигатель, то на общий счет скидка 20%.
 
             } else if (kolvoProblem > 1){
-//                schet  = schet - schet/100*10;
-//                schet -= schet / 100 * 10;
+//              schet -= schet / 100 * 10
+//              schet  = schet - schet / 100 * 10
                 schet *= 0.9;
                 System.out.println("Скидка 10%");
                 // Если две детали сломаны, то на общий счет идет скидка 10%.
