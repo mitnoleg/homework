@@ -1,8 +1,10 @@
 package lesson4;
 
 public class Sklad {
-    public static int count = 0;
+//    public static int count = 0;
+ private int count = 0;
     private String name;
+//    private String nameGruzchik;
 
 
     public Sklad (int tovarKol) {
@@ -14,11 +16,11 @@ public class Sklad {
         return "Остатки " + this.name + " в количестве " + this.count + " шт";
     }
 
-    public void setName(String newName) {
-        this.name = newName;
+    public void zagruzil (int kolichestvo) {
+        this.count += kolichestvo;
     }
-    public void setColor(String newColor) {
-        this.color = newColor;
+    public void razgruzil (int kolichestvo) {
+        this.count -= kolichestvo;
     }
 
 }

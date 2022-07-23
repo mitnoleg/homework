@@ -107,6 +107,13 @@ public class homework_advanced {
         // Работник берет из склада товар, на складе товар уменьшается. Работник когда взял товар, выводит на экран
         // "Ура я испортил водку!" и добавляет к себе в журнал количество испорченного товара.
         // У склада есть только одна позиция - Водка.
+        Sklad sk1 = new Sklad(1000);
+        System.out.println(sk1.getOstatki());
+        sk1.zagruzil(100);
+        System.out.println(sk1.getOstatki());
+        sk1.razgruzil(100);
+        System.out.println(sk1.getOstatki());
+
 
 
     }
