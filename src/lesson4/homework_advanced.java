@@ -43,7 +43,7 @@ public class homework_advanced {
         boolean hasFuel = true;
         boolean hasElectricsProblem = false;
         boolean hasMotorProblem = true;
-        boolean hasTransmissionProblem = true;
+        boolean hasTransmissionProblem = false;
         boolean hasWheelsProblem = false;
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
         // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
@@ -83,7 +83,7 @@ public class homework_advanced {
                 System.out.println("Скидка 20%");
                 // Если сломана коробка передач, и электрика или двигатель, то на общий счет скидка 20%.
 
-            } else if (kolvoProblem > 2){
+            } else if (kolvoProblem > 1){
 //                schet  = schet - schet/100*10;
                 schet -= schet/100*10;
                 System.out.println("Скидка 10%");
