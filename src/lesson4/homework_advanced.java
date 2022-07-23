@@ -12,7 +12,7 @@ public class homework_advanced {
         // Если число отрицательное, то сразу заканчиваем цикл, ничего не выводя.
         // Внимание: число может измениться, и не должно приводить к изменению вашего кода.
         if (increment > 0) {
-            int i = 0;
+            long i = 0;
             while (result < 1_000_000)
             {
                 i++;
@@ -79,13 +79,15 @@ public class homework_advanced {
 
             if (hasTransmissionProblem && ( hasElectricsProblem || hasMotorProblem) ){
 //                schet  = schet - schet/100*20;
-                schet -= schet/100*20;
+//                schet -= schet / 100 * 20;
+                schet *= 0.8;
                 System.out.println("Скидка 20%");
                 // Если сломана коробка передач, и электрика или двигатель, то на общий счет скидка 20%.
 
             } else if (kolvoProblem > 1){
 //                schet  = schet - schet/100*10;
-                schet -= schet/100*10;
+//                schet -= schet / 100 * 10;
+                schet *= 0.9;
                 System.out.println("Скидка 10%");
                 // Если две детали сломаны, то на общий счет идет скидка 10%.
             }
@@ -113,8 +115,22 @@ public class homework_advanced {
         System.out.println(sk1.getOstatki());
         sk1.razgruzil(100);
         System.out.println(sk1.getOstatki());
-
-
-
+        Workers worker1 = new Workers("Oleg",30);
+        Workers worker2 = new Workers("Ilya",45);
+        Workers worker3 = new Workers("Dima",36);
+        worker1.setCountBoj(10);
+        worker2.setCountBoj(30);
+        worker3.setCountBoj(10);
+        System.out.println(sk1.getOstatki());
+        System.out.println(worker1.getboj());
+        System.out.println(worker2.getboj());
+        System.out.println(worker3.getboj());
+        worker1.setCountBoj(10);
+        worker2.setCountBoj(30);
+        worker3.setCountBoj(10);
+        System.out.println(sk1.getOstatki());
+        System.out.println(worker1.getboj());
+        System.out.println(worker2.getboj());
+        System.out.println(worker3.getboj());
     }
 }
