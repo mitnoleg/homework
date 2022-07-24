@@ -59,7 +59,6 @@ public class homework_expert {
                         nomerResult += " ";
                         regionResult += m.group().substring(6,m.group().length());
                         regionResult += " ";
-
                     }
                 }
             }
