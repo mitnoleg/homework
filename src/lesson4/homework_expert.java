@@ -52,13 +52,21 @@ public class homework_expert {
 //                System.out.println(Arrays.toString(nomers));
                 for (String nomer : nomers ) {
 //                    Задача №1: узнать сколько всего машин со спец номерами: начинаются на M и заканчиваются на АВ.
-                    Pattern p = Pattern.compile("^М\\d{3}АВ\\d{2,3}");
+                    Pattern p = Pattern.compile("М\\d{3}АВ\\d{2,3}");
                     Matcher m = p.matcher(nomer);
                     if (m.find()) {
                         nomerResult += m.group();
                         nomerResult += " ";
-                        regionResult += m.group().substring(6,m.group().length());
-                        regionResult += " ";
+//                        regionResult += m.group().substring(6,m.group().length());
+//                        regionResult += " ";
+                        Pattern p1 = Pattern.compile("\\d{2,3}$");
+                        Matcher m1 = p1.matcher(m.group());
+                        if (m1.find()) {
+                            regionResult += m1.group();
+                            regionResult += " ";
+//                            System.out.println(m1.group());
+                        }
+//                        }
                     }
                 }
             }
