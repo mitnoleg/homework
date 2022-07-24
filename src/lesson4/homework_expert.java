@@ -54,7 +54,13 @@ public class homework_expert {
 //                    Задача №1: узнать сколько всего машин со спец номерами: начинаются на M и заканчиваются на АВ.
                     Pattern p = Pattern.compile("^М\\d{3}АВ\\d{2,3}");
                     Matcher m = p.matcher(nomer);
-                  
+                    if (m.find()) {
+                        nomerResult += m.group();
+                        nomerResult += " ";
+                        regionResult += m.group().substring(6,m.group().length());
+                        regionResult += " ";
+
+                    }
                 }
             }
         }
