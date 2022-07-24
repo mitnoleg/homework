@@ -2,6 +2,8 @@ package lesson4;
 
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class homework_expert {
     public static void main(String[] args) {
@@ -34,24 +36,29 @@ public class homework_expert {
         // <Integer> - обозначает тип который хранится в этой структуре данных (Generics)
         // Регулярные выражения - вытащить регион авто
         Map<Integer, Map<String, String[]>> data = GeneratorExpertHomework.getData();
-        System.out.println("Всего регионов: " + data.size());
-        Set<Integer> regions = data.keySet();
-        System.out.println("Регионы: " + regions);
-        List sortedKeys=new ArrayList(data.keySet());
-        Collections.sort(sortedKeys);
-        System.out.println("Регионы: " + sortedKeys);
-
-//        System.out.println(data.get(256).entrySet());
-//        Set<Map.Entry<String, String[]>> arr = data.get(256).entrySet().;
-//        Set set = data.entrySet();
-//        Iterator i = set.iterator();
-//        while(i.hasNext()) {
-//            Map.Entry me = (Map.Entry)i.next();
-//            System.out.print(me.getKey() + ": ");
-//            System.out.println(me.getValue());
-//        }
-
+//        System.out.println("Всего регионов: " + data.size());
+//        Set<Integer> regions = data.keySet();
+//        System.out.println("Регионы: " + regions);
+//        List sortedKeys = new ArrayList(data.keySet());
+//        Collections.sort(sortedKeys);
+//        System.out.println("Регионы: " + sortedKeys);
+        String nomerResult = "Спецномера: ";
+        String regionResult = "Регионы спецномеров: ";
+        for (Map.Entry<Integer, Map<String, String[]>> regMap1 : data.entrySet()) {
+            Map<String, String[]> regMap1Value = regMap1.getValue();
+//            System.out.println(regMap1Value);
+            for (Map.Entry<String, String[]> regNomerMap : regMap1Value.entrySet()) {
+                String[] nomers = regNomerMap.getValue();
+//                System.out.println(Arrays.toString(nomers));
+                for (String nomer : nomers ) {
+//                    Задача №1: узнать сколько всего машин со спец номерами: начинаются на M и заканчиваются на АВ.
+                    Pattern p = Pattern.compile("^М\\d{3}АВ\\d{2,3}");
+                    Matcher m = p.matcher(nomer);
+                  
+                }
+            }
+        }
+        System.out.println(nomerResult);
+        System.out.println(regionResult);
+        }
     }
-
-    }
-
