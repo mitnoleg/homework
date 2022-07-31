@@ -68,7 +68,15 @@ public class homework_basic {
             System.out.println(text.substring(1,text.length()));
 
         }
-
+        System.out.println();
+        Financial_record pervyj = new Financial_record(500,300);
+        System.out.println(pervyj.getIncomes());
+        System.out.println(pervyj.getOutcomes());
+        String path2 = "src/lesson6/report.txt";
+        try (FileWriter fileWriter1 = new FileWriter(path2)) {
+            fileWriter1.write("доходы = " + pervyj.getIncomes() + ", ");
+            fileWriter1.write("расходы = " + pervyj.getOutcomes());
+        }
     }
 }
 
