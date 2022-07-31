@@ -3,9 +3,11 @@ package lesson6;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,26 +20,49 @@ public class homework_expert {
 //        String path1 = "D:\\java\\homework\\resource";
         String path1 = "resource";
         double allPyterochka = 0.0;
-        double allperekrestok = 0.0;
-        double allydoma = 0.0;
-        double allokey = 0.0;
+        double allPerekrestok = 0.0;
+        double allYdoma = 0.0;
+        double allOkey = 0.0;
+//        double [] mountPyterochka =
 //        Files.walk(Path.of(path1)).forEach(e -> System.out.println(e.toString()));
         Path path = Paths.get(path1);
         List<Path> paths = listFiles(path);
 //        paths.forEach(x -> System.out.println(x));
         for (Path pathOne : paths) {
-            System.out.println(pathOne);
+//            System.out.println(pathOne);
             String filePath = String.valueOf(pathOne);
+            double dohodPyterochka = 0.0;
 
             try (BufferedReader file = new BufferedReader(new FileReader(filePath))) {
                 while (file.ready()) {
                     String line = file.readLine();
+//                    System.out.println(line);
+                    String[] array = line.split(";");
+//                    System.out.println(Arrays.toString(array));
+                    if (line.startsWith("pyterochka")){
+                        allPyterochka += Double.parseDouble(array[2]);
+                        dohodPyterochka += (Double.parseDouble(array[1]) - Double.parseDouble(array[2]));
+
+                    }
+                    if (line.startsWith("perekrestok")){
+                        allPerekrestok += Double.parseDouble(array[2]);
+                    }
+                    if (line.startsWith("ydoma")){
+                        allYdoma += Double.parseDouble(array[2]);
+                    }
+                    if (line.startsWith("okey")){
+                        allOkey += Double.parseDouble(array[2]);
+                    }
 
                 }
             }
-
+            System.out.println(filePath.substring(filePath.indexOf("_"),filePath.lastIndexOf(".")).substring(1).replace("_",".") + ": " + dohodPyterochka);
 //
         }
+        System.out.println("Расходы pyterochka за весь период: " + allPyterochka);
+        System.out.println("Расходы perekrestok за весь период: " + allPerekrestok);
+        System.out.println("Расходы ydoma за весь период: " + allYdoma);
+        System.out.println("Расходы okey за весь период: " + allOkey);
 
         //Экспертный уровень
         // Дано: папка, внутри которой находятся файлы, следующего именования - report_01_2012.txt, где 01 - месяц, 2012 - год
