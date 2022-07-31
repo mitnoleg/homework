@@ -1,9 +1,16 @@
 package lesson6;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class homework_basic {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         //Базовый уровень
         //Задача №1
         //Дано: у нас есть две модели машин - жигули и toyota. Каждая из этих машин умеет: начинать движение,
@@ -43,5 +50,25 @@ public class homework_basic {
             car.stopMoving();
             car.turnOnLights();
         }
+        System.out.println();
+        String path1 = "src/lesson6/my_first_file.txt";
+        try (FileWriter fileWriter1 = new FileWriter(path1)) {
+            fileWriter1.write("Моя бабушка\n");
+            fileWriter1.write("читает газету жизнь");
+            fileWriter1.close();
+            FileReader fileReader = new FileReader(path1);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String text = "";
+            while (bufferedReader.ready()) {
+                String line = bufferedReader.readLine();
+                text +=" ";
+                text +=line;
+//                System.out.println(line);
+            }
+            System.out.println(text.substring(1,text.length()));
+
+        }
+
     }
 }
+
