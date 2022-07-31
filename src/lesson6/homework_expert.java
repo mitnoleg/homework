@@ -2,6 +2,7 @@ package lesson6;
 
 public class homework_expert {
     public static void main(String[] args) {
+
         //Экспертный уровень
         // Дано: папка, внутри которой находятся файлы, следующего именования - report_01_2012.txt, где 01 - месяц, 2012 - год
         // Внутри файла следующий формат:
