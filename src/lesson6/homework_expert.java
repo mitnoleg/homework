@@ -32,7 +32,6 @@ public class homework_expert {
                     if (line.startsWith("pyterochka")){
                         allPyterochka += Double.parseDouble(array[2]);
                         dohodPyterochka += (Double.parseDouble(array[1]) - Double.parseDouble(array[2]));
-
                     }
                     if (line.startsWith("perekrestok")){
                         allPerekrestok += Double.parseDouble(array[2]);
