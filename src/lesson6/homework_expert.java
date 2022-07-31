@@ -1,8 +1,22 @@
 package lesson6;
 
-public class homework_expert {
-    public static void main(String[] args) {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+public class homework_expert {
+    public static void main(String[] args) throws IOException {
+
+        String path1 = "D:\\java\\homework\\resource";
+        String path1 = "resource";
+//        Files.walk(Path.of(path1)).forEach(e -> System.out.println(e.toString()));
+        Path path = Paths.get(path1);
+        List<Path> paths = listFiles(path);
+        paths.forEach(x -> System.out.println(x));
         //Экспертный уровень
         // Дано: папка, внутри которой находятся файлы, следующего именования - report_01_2012.txt, где 01 - месяц, 2012 - год
         // Внутри файла следующий формат:
@@ -32,5 +46,17 @@ public class homework_expert {
         // Расходы pyterochka за весь период: 20032220.00
         // Расходы perekrestok за весь период: 1734220.00
         // .. и тд
+
+    }
+
+    public static List<Path> listFiles(Path path) throws IOException {
+
+        List<Path> result;
+        try (Stream<Path> walk = Files.walk(path)) {
+            result = walk.filter(Files::isRegularFile)
+                    .collect(Collectors.toList());
+        }
+        return result;
+
     }
 }
