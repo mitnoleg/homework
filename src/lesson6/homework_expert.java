@@ -1,22 +1,44 @@
 package lesson6;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class homework_expert {
     public static void main(String[] args) throws IOException {
 
-        String path1 = "D:\\java\\homework\\resource";
+//        String path1 = "D:\\java\\homework\\resource";
         String path1 = "resource";
+        double allPyterochka = 0.0;
+        double allperekrestok = 0.0;
+        double allydoma = 0.0;
+        double allokey = 0.0;
 //        Files.walk(Path.of(path1)).forEach(e -> System.out.println(e.toString()));
         Path path = Paths.get(path1);
         List<Path> paths = listFiles(path);
-        paths.forEach(x -> System.out.println(x));
+//        paths.forEach(x -> System.out.println(x));
+        for (Path pathOne : paths) {
+            System.out.println(pathOne);
+            String filePath = String.valueOf(pathOne);
+
+            try (BufferedReader file = new BufferedReader(new FileReader(filePath))) {
+                while (file.ready()) {
+                    String line = file.readLine();
+
+                }
+            }
+
+//
+        }
+
         //Экспертный уровень
         // Дано: папка, внутри которой находятся файлы, следующего именования - report_01_2012.txt, где 01 - месяц, 2012 - год
         // Внутри файла следующий формат:
