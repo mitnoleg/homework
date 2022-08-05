@@ -20,7 +20,7 @@ public class HomeworkAdvanced {
         Tree spruce = new Tree("сосна",TreeClass.coniferous,true,true);
         Tree pine = new Tree("ель",TreeClass.coniferous,true,true);
         Plant rose = new Plant("роза",PlantDepartment.Marchantiophyta,true,true);
-        Plant fern  = new Plant("папоротник",PlantDepartment.Marchantiophyta,true);
+        Plant fern  = new Plant("папоротник",PlantDepartment.Polypodiophyta,true);
         Tree [] trees = {spruce,pine};
         Plant [] plants = {rose,fern};
         for (Tree tree :  trees) {

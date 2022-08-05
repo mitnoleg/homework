@@ -1,6 +1,6 @@
 package lesson8;
 
-public class Plant implements Smelling,Flowering{
+public class Plant implements Smelling{
     private String name;
     PlantDepartment department;
     private boolean flowering;
@@ -19,7 +19,7 @@ public class Plant implements Smelling,Flowering{
         this.smelling = smelling;
     }
 
-    @Override
+
     public void bloom() {
         if (this.flowering) {
             System.out.println(this.name + " : умеет цвести");
