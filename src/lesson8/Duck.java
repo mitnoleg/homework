@@ -30,7 +30,14 @@ public class Duck implements Flying {
     }
 
     @Override
-    public void fly() {
-        System.out.println("утка летати");
+    public void fly() throws FlyException {
+        if (!this.isInjured){
+            System.out.println("утка летит");
+        }
+        else {
+            throw new FlyException("Ошибка: утка ранена");
+        }
+
+
     }
 }

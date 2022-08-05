@@ -30,7 +30,12 @@ public class Airplane  implements  Flying{
     }
 
     @Override
-    public void fly() {
-        System.out.println("самолет летит");
+    public void fly() throws FlyException {
+        if (this.countPassengers > 0) {
+            System.out.println("самолет летит");
+        }
+        else {
+            throw new FlyException("Ошибка: пассажиров в самолете меньше 0");
+        }
     }
 }
