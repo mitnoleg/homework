@@ -2,23 +2,23 @@ package lesson8;
 
 public class Airplane  implements  Flying{
     private int countPassengers;
-    private String homeСountry;
+    private String homeCountry;
 
-    public Airplane(int countPassengers, String homeСountry) {
+    public Airplane(int countPassengers, String homeCountry) {
         this.countPassengers = countPassengers;
-        this.homeСountry = homeСountry;
+        this.homeCountry = homeCountry;
     }
 
     public Airplane(int countPassengers) {
         this.countPassengers = countPassengers;
     }
 
-    public String getHomeСountry() {
-        return homeСountry;
+    public String getHomeCountry() {
+        return homeCountry;
     }
 
-    public void setHomeСountry(String homeСountry) {
-        this.homeСountry = homeСountry;
+    public void setHomeCountry(String homeCountry) {
+        this.homeCountry = homeCountry;
     }
 
     public int getCountPassengers() {
