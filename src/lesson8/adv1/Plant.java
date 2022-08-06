@@ -1,6 +1,6 @@
-package lesson8;
+package lesson8.adv1;
 
-public class Plant implements Smelling{
+public abstract class Plant {
     private String name;
     PlantDepartment department;
     private boolean flowering;
@@ -20,17 +20,17 @@ public class Plant implements Smelling{
     }
 
 
-    public void bloom() {
-        if (this.flowering) {
-            System.out.println(this.name + " : умеет цвести");
-        }
-    }
-
-    @Override
-    public void smell() {
-        if (this.smelling) {
-        System.out.println(this.name + " : умеет пахнуть");
-        }
-
-    }
+//    public void bloom() {
+//        if (this.flowering) {
+//            System.out.println(this.name + " : умеет цвести");
+//        }
+//    }
+//
+//    @Override
+//    public void smell() {
+//        if (this.smelling) {
+//        System.out.println(this.name + " : умеет пахнуть");
+//        }
+//
+//    }
 }

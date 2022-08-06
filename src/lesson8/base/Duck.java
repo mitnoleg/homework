@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.base;
 
 public class Duck implements Flying {
     private boolean isInjured;

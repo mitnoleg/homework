@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.base;
 
 public class Airplane  implements  Flying{
     private int countPassengers;

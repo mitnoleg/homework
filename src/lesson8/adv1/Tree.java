@@ -1,6 +1,6 @@
-package lesson8;
+package lesson8.adv1;
 
-public class Tree implements Smelling {
+public abstract class Tree {
     private String name;
     TreeClass type;
     private boolean hasBumps;
@@ -14,10 +14,10 @@ public class Tree implements Smelling {
     }
 
 
-    @Override
-    public void smell() {
-        if (this.smelling) {
-            System.out.println(this.name + " : умеет пахнуть");
-        }
-    }
+//    @Override
+//    public void smell() {
+//        if (this.smelling) {
+//            System.out.println(this.name + " : умеет пахнуть");
+//        }
+//    }
 }
