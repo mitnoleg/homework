@@ -8,7 +8,7 @@ public class Watch {
     }
     public void tick() throws WatchBrokenError {
         if (isBroken) {
-            throw new WatchBrokenError();
+            throw new WatchBrokenError("Ошибка: Часы сломались.");
         }
         System.out.println("Часы тикают");
     }

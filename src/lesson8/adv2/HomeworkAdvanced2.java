@@ -34,7 +34,7 @@ public class HomeworkAdvanced2 {
                 try {
                     workerWatch.tick();
                 } catch (WatchBrokenError e) {
-                    System.out.println("Ошибка: часы сломались");
+                    System.out.println(e.getMessage());
                 }
             }
         }
