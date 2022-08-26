@@ -1,6 +1,11 @@
 package module2.lesson2;
 
 import module2.lesson2.task1.*;
+import module2.lesson2.task2.GenericsArray;
+import module2.lesson2.task2.MyList;
+import module2.lesson2.task2.Person;
+
+import java.util.Arrays;
 
 public class homework {
     public static void main(String[] args) {
@@ -10,14 +15,14 @@ public class homework {
         //*1. Животное плавающее
         //*2. Животное летающее
         //*3. Животное кусающее
-        //В классе Zoo будут методы получения и замены этих животных. Получить мы должны конкретные классы,
+        //*В классе Zoo будут методы получения и замены этих животных. Получить мы должны конкретные классы,
         //а не интерфейсы.
-        //Зоопарк имеет методы - void feedFlyable(),void feedSwimable(),void feedBitable(). Логика внутри метода:
-        //Печать на экран "летающее животное ест", вызов у животного метода fly() и тд.
+        //*Зоопарк имеет методы - void feedFlyable(),void feedSwimable(),void feedBitable(). Логика внутри метода:
+        //*Печать на экран "летающее животное ест", вызов у животного метода fly() и тд.
         //*Создать 6 классов животных - 2 класса плавающих, 2 класса летающих, 2 класса кусающих.
         //*Создать по одному экземпляру на каждый класс.
-        //Создать 2 экземпляра зоопарка и распределить животных по зоопаркам.
-        //Никаких проверок if instanceof быть не должно, и внутри Zoo будут лежать Generics, а не интерфейсы.
+        //*Создать 2 экземпляра зоопарка и распределить животных по зоопаркам.
+        //*Никаких проверок if instanceof быть не должно, и внутри Zoo будут лежать Generics, а не интерфейсы.
         Falcon falcon = new Falcon();
         Penguin penguin = new Penguin();
         Fish fish = new Fish();
@@ -45,6 +50,17 @@ public class homework {
         //1.Создать новый массив T[] с размерностью в два раза больше предыдущей.
         //2.Скопировать со старого массива все значения в новый
         //3.Присвоить экземпляру MyList новый массив.
+        @SuppressWarnings("static-access")
+        Person[] persons = new GenericsArray().getArray(Person.class, 3);
+
+        System.out.println(Arrays.toString(persons));
+        for (int i = 0; i < persons.length; i++) {
+            persons[i]=new Person(i);
+        }
+        System.out.println(Arrays.toString(persons));
+
+
+
 
     }
 }
