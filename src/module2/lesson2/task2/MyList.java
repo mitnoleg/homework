@@ -13,6 +13,10 @@ public class MyList<E> {
         this.size = 0;
     }
 
+    public E[] getObjects() {
+        return objects;
+    }
+
     public boolean add(E object) {
         if (size == objects.length) {
             Object[] tempObjects;
