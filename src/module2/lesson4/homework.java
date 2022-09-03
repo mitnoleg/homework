@@ -17,11 +17,11 @@ public class homework {
                 .filter(e -> e > 4)
                 .distinct()
                 .map(e -> new Users(e))
-                .peek(users -> users.setListOfNumbers((
+                .peek(e -> e.setListOfNumbers((
                         Stream.generate(() -> random.nextInt(10))
-                                .limit(users.getNumber())
+                                .limit(e.getNumber())
                                 .collect(Collectors.toList()))))
-                .flatMap(users -> users.getListOfNumbers().stream())
+                .flatMap(e -> e.getListOfNumbers().stream())
                 .map(e -> e * 10)
                 .reduce(Integer::sum)
                 .ifPresentOrElse(System.out::println, () -> System.out.println(0));
