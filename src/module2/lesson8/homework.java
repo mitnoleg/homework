@@ -1,7 +1,7 @@
 package module2.lesson8;
 
 public class homework {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //1. Создать аннотацию GetMetaData, которая может быть над атрибутом, методом, классом
         //2. Создать класс UserMeta, с атрибутом String name, Integer count, методом GetSuperName(String prefix)
         //3. Создать обработчик аннотации GetMetaData, так чтобы:

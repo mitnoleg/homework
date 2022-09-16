@@ -1,6 +1,8 @@
 package module2.lesson8;
 
+@GetMetaData
 public class UserMeta {
+    @GetMetaData
     private String name;
     private int count;
 
@@ -24,7 +26,9 @@ public class UserMeta {
     public void setCount(int count) {
         this.count = count;
     }
-    public void GetSuperName(String prefix){
+    @GetMetaData
+    public void GetSuperName(String prefix) throws InterruptedException {
+        Thread.sleep(1000);
         System.out.println(prefix+ " " + name);
     }
 
