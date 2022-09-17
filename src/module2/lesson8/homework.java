@@ -3,6 +3,7 @@ package module2.lesson8;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class homework {
     public static void main(String[] args) throws InterruptedException, InvocationTargetException,
@@ -31,12 +32,13 @@ public class homework {
                 System.out.println(declaredField.get(userMeta));
             }
         }
-        for (Field declaredField : userMeta.getClass().getDeclaredFields()) {
-            declaredField.setAccessible(true);
-            if (declaredField.isAnnotationPresent(GetMetaData.class)) {
-                System.out.println(declaredField.get(userMeta));
-            }
+        if (userMeta.getClass().isAnnotationPresent(GetMetaData.class)) {
+            Arrays.asList(userMeta.getClass().getDeclaredFields()).stream()
+                    .peek(e -> e.setAccessible(true))
+                    .forEach(System.out::println);
         }
+
+
     }
 
 
